@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        h2 {
+            color: #666;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+
+        article {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-info {
+            color: #888;
+            font-size: 0.8em;
+        }
+
+        .post-content {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>My Blog</h1>
+        <h2>Welcome to my thoughts and musings</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <article>
+            <h2>Post Title 1</h2>
+            <div class="post-info">Posted on January 1, 2024 by John Doe</div>
+            <div class="post-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tellus id turpis dignissim sagittis.
+                    Fusce eget urna nec elit cursus pulvinar. Phasellus ultricies urna et sapien tempus, vel dapibus
+                    elit
+                    rhoncus. Nam ullamcorper, justo at varius consequat, nulla leo elementum ipsum, ut lacinia nunc nibh
+                    id
+                    libero. Ut sit amet tortor nunc. Integer ut luctus ipsum, a aliquet dui. Donec eu rutrum ante. Donec
+                    bibendum velit justo, non sagittis nisi rhoncus nec.</p>
+            </div>
+        </article>
+
+        <article>
+            <h2>Post Title 2</h2>
+            <div class="post-info">Posted on February 15, 2024 by Jane Smith</div>
+            <div class="post-content">
+                <p>Nulla facilisi. Vestibulum convallis erat a nisl rhoncus elementum. Suspendisse consequat, nisl non
+                    tincidunt scelerisque, ligula nisi consectetur lacus, nec cursus ipsum libero in purus. Donec ac
+                    hendrerit risus. Fusce elementum tortor eget sem feugiat, vitae lobortis elit bibendum. Integer
+                    bibendum augue a est rhoncus, nec dictum ipsum rutrum. Pellentesque rhoncus turpis non felis
+                    ultrices
+                    lobortis. Nulla facilisi.</p>
+            </div>
+        </article>
+    </section>
+
+    <section id="about" style="display: none;">
+        <h2>About Me</h2>
+        <p>This is the about page. Here you can write about yourself, your interests, and your motivations for
+            starting this blog.</p>
+    </section>
+
+    <section id="contact" style="display: none;">
+        <h2>Contact Me</h2>
+        <p>You can contact me by email at <a href="mailto:example@example.com">example@example.com</a> or by filling out
+            the form below:</p>
+        <form action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Blog</p>
+    </footer>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('section').forEach(function (section) {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        showSection('home');
+
+        document.querySelectorAll('nav a').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                var sectionId = link.getAttribute('href').substr(1);
+                showSection(sectionId);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
